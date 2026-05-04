@@ -1,0 +1,342 @@
+:root {
+    --primary-black: #0f0f0f;
+    --accent-gold: #f3b31a;
+    --text-muted: #555555;
+    --bg-light: #f8f9fa;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--primary-black);
+    line-height: 1.6;
+}
+
+/* --- Navbar  --- */
+#navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.logo img {
+    height: 80px;       
+    width: auto;
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#navLinks {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+#navLinks a {
+    text-decoration: none;
+    color: var(--primary-black);
+    font-weight: 500;
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+#navLinks a:hover {
+    color: var(--accent-gold);
+}
+
+#navLinks li a.active {
+    color: var(--accent-gold);
+    position: relative;
+    font-weight: 600;
+}
+
+#navLinks li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #navLinks {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #navLinks.active {
+        display: flex;
+    }
+}
+
+footer {
+    background: var(--accent-gold);
+    padding: 80px 0 20px;
+}
+
+.footer-container {
+    width: 50%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-container p {
+    margin: 10px 0;
+}
+
+.footer-links h3,
+.social-section h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-black);
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--accent-gold);
+    color: var(--primary-black);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+button .play-store-btn {
+    height: 45px;
+    width: auto;
+    display: block;
+    cursor: pointer;
+}
+
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f9fafb, #eef2f7);
+}
+
+
+.form-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+
+.form-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.form-card p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 5px;
+    color: #888;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: red;
+}
+
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label {
+    top: -8px;
+    font-size: 0.75rem;
+    color: red;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: rgb(144, 123, 192);
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: rgb(64, 192, 81);
+}
+
+
+.success-container {
+    display: none;
+    text-align: center;
+}
+
+.success-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+.done-btn {
+    margin-top: 20px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    background: rgb(29, 189, 37);
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.done-btn:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.done-btn:active {
+    transform: scale(0.97);
+}
