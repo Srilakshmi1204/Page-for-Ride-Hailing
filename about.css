@@ -2,10 +2,8 @@
 :root {
     --primary-black: #0f0f0f;
     --accent-gold: #f3b31a;
-    --soft-white: #ffffff;
+    --bg-light: #ffffff;
     --text-muted: #555555;
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 * {
@@ -23,7 +21,7 @@ body {
 
 /* ---  Navbar Styling --- */
 #navbar {
-    background: var(--glass-bg);
+    background: var(--bg-light);
     backdrop-filter: blur(15px);
     height: 80px;
     display: flex;
@@ -327,7 +325,7 @@ body {
 
 /* FOOTER */
 footer {
-    background: var(--accent-gold);
+    background: var(--primary-black);
     padding: 80px 0 20px;
 }
 
@@ -336,7 +334,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     margin-bottom: 50px;
 }
@@ -349,12 +347,13 @@ footer {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: var(--bg-light)
 }
 
 .footer-links a {
     display: block;
     text-decoration: none;
-    color: var(--primary-black);
+    color: var(--bg-light);
     margin-bottom: 10px;
     transition: var(--transition);
 }
@@ -389,7 +388,7 @@ footer {
     text-align: center;
     border-top: 1px solid rgba(0,0,0,0.05);
     padding-top: 20px;
-    color: var(--text-muted);
+    color: var(--bg-light);
     font-size: 14px;
 }
 

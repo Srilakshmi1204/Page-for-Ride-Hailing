@@ -54,16 +54,12 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.logo img {
+.logo {
     height: 80px;       
     width: auto;
     display: block;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
 #navLinks {
     display: flex;
     list-style: none;
@@ -119,7 +115,7 @@ body {
 /* --- Hero Section --- */
 .hero {
     padding: 80px 0;
-    background: #60809f;
+    background: var(--bg-light);
 }
 
 .hero-container {
@@ -137,12 +133,12 @@ body {
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 20px;
-    color: white;
+    color: var(--primary-black);
 }
 
 .hero-content p {
     font-size: 19px;
-    color: white;
+    color: var(--primary-black);
     margin-bottom: 30px;
 }
 
@@ -182,57 +178,81 @@ body {
         padding: 0 20px;
     }
 }
-/* ---What We Offer --- */
+/* Offer Section */
 .section {
-    padding: 100px 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
+    padding: 50px 20px;
+    max-width: 1300px;
+    margin: auto;
 }
 
 .section h2 {
     text-align: center;
-    font-size: 40px;
-    margin-bottom: 50px;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 60px;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .service-card {
-    background-color: #f0f4f8;
-    padding: 30px;
+    position: relative;
+    backdrop-filter: blur(12px);
     border-radius: 20px;
-    transition: var(--transition);
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(120deg, #ffcc00, transparent, #00c6ff);
 }
 
 .service-card:hover {
-    background: #fff;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
 }
 
 .service-card img {
-    width: 100px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: rotate(5deg) scale(1.1);
 }
 
 .service-card h3 {
-    margin-bottom: 15px;
-    font-size: 25px;
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--primary-black);
 }
+
 .service-card p {
-    font-size: 20px;
+    font-size: 16px;
+    color: var(--primary-black);
+    line-height: 1.6;
 }
 
 /* --- Why Section --- */
 .why-section {
-    background: #333;;
+    background: linear-gradient(135deg, #1e293b, #D3CDAE);
     color: white;
-    padding: 80px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
@@ -243,7 +263,7 @@ body {
 
 .why-subtitle {
     color: #ccc;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .why-grid {
@@ -251,16 +271,21 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
 }
 
+@media (max-width: 768px){
+    .why-grid{
+    grid-template-columns: 1fr;
+    }
+}
 .why-card {
     background: rgba(255,255,255,0.05);
-    padding: 40px 20px;
+    padding: 30px 10px;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: var(--transition);
+    
 }
 
 .why-card:hover {
@@ -330,8 +355,13 @@ body {
     }
 }
 /* --- Footer --- */
+@media (max-width: 768px) {
+  .logo {
+    margin: 0 auto;
+  }
+}
 footer {
-    background: var(--bg-light);
+    background: white;
     padding: 80px 0 20px;
 }
 
