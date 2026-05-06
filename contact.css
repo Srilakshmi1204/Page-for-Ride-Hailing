@@ -44,16 +44,15 @@ body {
 
 
 .logo img {
-    height: 80px;       
+    height: 100px;       
     width: auto;
     display: block;
 }
-
-.logo {
-    display: flex;
-    align-items: center;
+@media (max-width: 768px){
+    .logo{
+        margin-left: -30px;
+    }
 }
-
 #navLinks {
     display: flex;
     list-style: none;

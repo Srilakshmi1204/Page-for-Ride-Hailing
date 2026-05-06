@@ -55,11 +55,15 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .logo {
-    height: 80px;       
+    height: 100px;       
     width: auto;
     display: block;
 }
-
+@media (max-width: 768px){
+    .logo{
+        margin-left: -30px;
+    }
+}
 #navLinks {
     display: flex;
     list-style: none;
@@ -356,7 +360,8 @@ body {
 }
 /* --- Footer --- */
 @media (max-width: 768px) {
-  .logo {
+  .footer-brand img {
+    display: block;
     margin: 0 auto;
   }
 }
